@@ -10,3 +10,8 @@ for num in numList:
     total=total+num
 
 print(f"The numbers added together are equal to {total:.2f}")
+
+for i in range(5):
+    for j in range(i+1):
+        print("*",end="")
+    print()
