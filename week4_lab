@@ -1,0 +1,109 @@
+"""Practice using functions and return values."""
+#Exercise 1
+secretValue=3
+while True:
+    guess=-1
+    try:
+        guess=int(input("Enter your guess"))
+    except:
+        print("Guess a *number* please.")
+
+    if(guess<secretValue):
+        print("Too low, try again!")
+    elif(guess>secretValue):
+        print("Too high, try again!")
+    else:
+        print("That's correct! Good job!")
+        break
+
+#Exercise 2
+def celsius_to_fahrenheit(celsius):
+    fahrenheit = (celsius*(9/5)) + 32 #Changes the degrees in celsius to degrees in fahrenheit.
+    return fahrenheit
+
+celsius=25
+fahrenheit=celsius_to_fahrenheit(celsius)
+print(f"{celsius} degrees celsius is {fahrenheit} in fahrenheit.") #The print command outputs a statement to the terminal.
+
+#Exercise 3
+var="I am global"
+def test_scope():
+    var="woah local"
+    print(var)
+
+test_scope()
+print(var)
+"""Prints something different because the value of a global variable is not changed when referenced in the function. 
+Instead, it creates a new variable. 
+Here, the print statement only knows about the global variable, so it prints it."""
+
+#Exercise 4
+def addition():
+    total=0
+    try:
+        num1=int(input("Input your first number"))
+        num2=int(input("Input your second number"))
+    except:
+        print("Fail.")
+    
+    total=num1+num2
+    return total
+
+def subtraction():
+    try:
+        num1=int(input("Input your first number"))
+        num2=int(input("Input your second number"))
+    except:
+        print("Fail.")
+        
+    print(f"The answer is {num1-num2}")
+    print()
+
+def multiplication():
+    try:
+        num1=int(input("Input your first number"))
+        num2=int(input("Input your second number"))
+    except:
+        print("Fail.")
+
+    total=num1*num2
+    return total
+
+def division():
+    try:
+        num1=int(input("Input your first number"))
+        num2=int(input("Input your second number"))
+    except:
+        print("Fail.")
+
+    total=num1/num2
+    return total
+
+loop=True
+while(loop==True):
+    print("What would you like to do?")
+    print("Type 1 to add some numbers!")
+    print("Type 2 to subtract some numbers!")
+    print("Type 3 to times some numbers!")
+    print("Type 4 to divide some numbers!")
+    print("Type 5 to exit the calculator!")
+    decision=input()
+    if(decision=="5"):
+        print("Thank you for using the calculator!")
+        loop=False
+    elif(decision=="1"):
+        total=addition()
+        print(f"The answer is {total}")
+        print()
+    elif(decision=="2"):
+        subtraction()
+    elif(decision=="3"):
+        total=multiplication()
+        print(f"The answer is {total}")
+        print()
+    elif(decision=="4"):
+        total=division()
+        print(f"The answer is {total}")
+        print()
+    else:
+        print()
