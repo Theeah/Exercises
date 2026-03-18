@@ -68,5 +68,5 @@ def main():
             print(f"Error: {e}")
             main()
 
-if __name__ == "__main__": #Main Execution
+if __name__=="__main__":
     main()
